@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import { commonValidators } from 'common/utils/validation/index';
 import * as validate from './validate';
 import { bindMessageToValidator, composeBoundValidators } from './validatorHelpers';
 
@@ -94,7 +93,7 @@ export const createRuleNameValidator = (notifications, notificationId) =>
   ]);
 export const createProjectNameValidator = () =>
   composeBoundValidators([
-    commonValidators.requiredField,
+    requiredField,
     bindMessageToValidator(validate.projectNameLength, 'projectNameLengthHint'),
     bindMessageToValidator(validate.projectNamePattern, 'projectNamePatternHint'),
   ]);
